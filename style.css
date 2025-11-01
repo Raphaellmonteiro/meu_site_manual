@@ -1,0 +1,357 @@
+/* --- Configurações Globais --- */
+:root {
+    /* Mudei a cor primária para um verde amigável */
+    --primary-color: #2a9d8f; 
+    --primary-color-dark: #264653;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --background-color: #fff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--dark-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color-dark);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+section {
+    padding: 100px 20px;
+    border-bottom: 1px solid var(--light-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- Cabeçalho e Navegação --- */
+#main-header {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--light-color);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#main-header.scrolled {
+    box-shadow: var(--shadow);
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+nav .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color-dark);
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 2rem;
+}
+
+nav .nav-links a {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Seção Início (Hero) --- */
+#inicio {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--light-color);
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #218278; /* Tom mais escuro do verde */
+}
+
+/* --- Estilos de Cards (Usado em "Como Funciona" e "Valores") --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* --- Seção Quem Pode Participar --- */
+#participantes {
+    background-color: var(--light-color);
+}
+
+.content-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.content-box ul {
+    margin: 1rem 0 1rem 2rem;
+}
+
+.content-box li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Seção Valores --- */
+#valores .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.pricing-card {
+    text-align: center;
+    border-top: 5px solid var(--primary-color);
+}
+
+.pricing-card .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color-dark);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.pricing-card li {
+    margin-bottom: 0.5rem;
+}
+
+.cta-button-outline {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button-outline:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+/* --- Seção Contato --- */
+#contato {
+    text-align: center;
+}
+
+.social-links a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color-dark);
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color-dark);
+    color: var(--light-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Responsividade (Celulares) --- */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    nav .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav .nav-links li {
+        margin: 0.5rem 0.5rem;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* ======================================= */
+/* Estilos do Interruptor (Dark Mode)     */
+/* ======================================= */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+@media (max-width: 768px) {
+    .theme-switch-wrapper {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+}
+
+/* ======================================= */
+/* Estilos DARK MODE                      */
+/* ======================================= */
+body.dark-mode {
+    --primary-color-dark: #66cdaa; /* Verde claro para contraste */
+    --dark-color: #f4f4f4;
+    --light-color: #3a3a3a;
+    --background-color: #222;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .card {
+    background-color: #333;
+}
+body.dark-mode .content-box {
+    background-color: #333;
+}
+body.dark-mode footer {
+    background-color: #1a1a1a;
+    color: #aaa;
+}
