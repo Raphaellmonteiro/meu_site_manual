@@ -8,7 +8,7 @@ function pedirSenha() {
     const senha = prompt("Digite a senha para continuar:");
 
     if (senha === "2025") {
-        window.location.href = "index.html";
+        window.location.href = "index1.html";
     } else {
         alert("Senha incorreta!");
     }
