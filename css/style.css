@@ -91,7 +91,7 @@ p1 {
 /* --- Estilo da Miniatura do Jogo --- */
 .game-thumbnail {
     /* Define a largura da imagem */
-    width: 200px; 
+    width: 150px; 
     
     /* (Opcional) Define uma largura máxima, caso 200px seja muito grande em telas pequenas */
     max-width: 100%; 
@@ -108,29 +108,33 @@ p1 {
     flex-shrink: 0; 
 }
 .conteudo-principal {
-    max-width: 900px;
+    max-width: 100%;
     margin: 20px; 
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
     border: 1px solid rgba(0, 255, 0, 0.2);
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-    
-    /* ADICIONE ESTA LINHA */
-    text-align: center;
+
+    /* --- ADICIONE ESTAS 3 LINHAS --- */
+    display: flex;      /* Ativa o layout lado a lado */
+    flex-wrap: wrap;    /* Permite que os itens quebrem a linha */
+    gap: 20px;          /* Cria um espaço de 20px entre os itens */
 }
-/* --- Item do Jogo (Coloca imagem e texto lado a lado) --- */
-.game-item {
-    display: flex; /* O mais importante: alinha os itens lado a lado */
-    align-items: flex-start; /* Alinha o topo dos itens */
-    gap: 25px; /* Espaço entre a imagem e o texto */
+/* === ESTILO DA PÁGINA DE PROGRAMAS (Grade Flexível) === */
+.program-item {
+    /* Define que o item é flexível e tentará caber */
+    flex: 1 1 auto; 
+    
+    text-align: center; /* Centraliza o texto e botão */
+    
+    /* DIMINUÍMOS O PADDING: */
+    padding: 10px;
     
     /* Estilos do tema */
-    padding: 20px;
     border: 1px solid rgba(0, 255, 0, 0.3);
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 25px; /* Espaço entre um jogo e outro */
 }
 .game-info {
     flex: 1; 
@@ -207,58 +211,14 @@ p1 {
     color: #ff00ff;
     text-shadow: 0 0 10px #ff00ff;
 }
-.segredos-raphaell-monteiro {
-    /* Usa Flexbox para centralizar o conteúdo */
-    display: flex;
-    justify-content: center; /* Centraliza na horizontal */
-    align-items: center;   /* Centraliza na vertical */
-    
-    /* Faz a página ocupar 100% da altura da tela */
-    height: 100vh; 
-    
-    /* Remove o padding-top que atrapalha a centralização */
-    padding-top: 0; 
-    
-    /* Garante que o fundo e a fonte sejam os mesmos */
-    background-image: url("../img/fundo1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    text-align: center;
-}
-.falando-de-mim{
-    font-family: "IM Fell English", serif;
-    font-size: 1.3rem;
-    color: rgb(220, 220, 220);
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px black;
-    max-width: 600px;      /* largura máxima */
-    margin: 0 auto 20px;   /* centraliza e cria espaço */
-    padding: 0 20px;       /* distância das bordas internas */
-    text-align: center;    /* alinha o texto */
-}
-/* === ESTILO DA PÁGINA DE PROGRAMAS (Vertical) === */
-
-.program-item {
-    /* Define o layout */
-    display: block; /* Garante que é um bloco vertical */
-    text-align: center; /* Centraliza TUDO dentro dele */
-    
-    /* Estilos do tema (copiado do .game-item) */
-    padding: 20px;
-    border: 1px solid rgba(0, 255, 0, 0.3);
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 25px; 
-}
-
-/* Estiliza o H2 dentro do novo item */
+/* Estilo do H2 dentro do item de programa */
 .program-item h2 {
     color: #0f0; 
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
-    margin-top: 15px; /* Adiciona espaço acima do título */
+    margin-top: 15px;
 }
-
-/* O .game-thumbnail e .btn-download já funcionam */
+/* Forçar 6 itens por linha */
+.program-item {
+    flex: 0 0 calc(20.00% - 100px); /* 100 / 6 = 16.66% */
+    max-width: calc(20.00% - 55px);
+}
